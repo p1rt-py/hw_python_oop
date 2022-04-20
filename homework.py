@@ -1,4 +1,4 @@
-from math import *
+# from math import *
 
 
 class InfoMessage:
@@ -108,7 +108,8 @@ class SportsWalking(Training):
         cal_wlk2 = (self.duration * m_in_h)
         # calories_walking = (coeff_calorie_3 * self.weight + cal_wlk
         # * coeff_calorie_4 * self.weight) * cal_wlk2
-        # (0.035 * вес + (средняя_скорость ** 2 // рост) * 0.029 * вес) * время_тренировки_в_минутах
+        # (0.035 * вес + (средняя_скорость ** 2 // рост) * 0.029 * вес) *
+        # время_тренировки_в_минутах
         calories_walking = (coeff_calorie_3 * self.weight +
                             (self.get_mean_speed() ** 2 // self.height) *
                             coeff_calorie_4 * self.weight) * cal_wlk2
