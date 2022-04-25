@@ -100,8 +100,8 @@ class SportsWalking(Training):
 
         cal_wlk = ((self.get_mean_speed()**2) // self.height)
         cal_wlk2 = (self.duration * self.M_IN_H)
-        calories_walking = (self.COF_CAL_3 * self.weight
-                            + cal_wlk * self.COF_CAL_4 * self.weight) * cal_wlk2
+        calories_walking = (self.COF_CAL_3 * self.weight + cal_wlk
+                            * self.COF_CAL_4 * self.weight) * cal_wlk2
         return calories_walking
 
 
