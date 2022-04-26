@@ -1,5 +1,5 @@
-from typing import Dict, Type
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
+from typing import Dict, List, Type
 
 
 @dataclass()
@@ -68,12 +68,12 @@ class Running(Training):
     COF_CAL_1: float = 18
     COF_CAL_2: float = 20
 
-    def __init__(self,
-                 action: int,
-                 duration: float,
-                 weight: float
-                 ) -> None:
-        super().__init__(action, duration, weight)
+    # def __init__(self,
+    #             action: int,
+    #             duration: float,
+    #             weight: float
+    #             ) -> None:
+    #    super().__init__(action, duration, weight)
 
     def get_spent_calories(self) -> float:
         cal_run2 = (self.duration * self.M_IN_H)
@@ -133,7 +133,7 @@ class Swimming(Training):
         return calories_swim
 
 
-def read_package(workout_type: str, data: list) -> Training:
+def read_package(workout_type: str, data: List[int]) -> Training:
     """Прочитать данные полученные от датчиков."""
     training_dict: Dict[str, Type[Training]] = {
         'SWM': Swimming,
